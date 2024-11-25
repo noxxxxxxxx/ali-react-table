@@ -1,35 +1,63 @@
 {
-  "name": "ali-react-table-monorepo",
-  "private": true,
-  "version": "0.0.0",
-  "description": "ali-react-table monorepo",
+  "name": "@diezhi/react-table",
+  "version": "2.7.4",
+  "description": "高性能 React 表格组件",
+  "sideEffects": false,
+  "module": "dist/ali-react-table.esm.js",
+  "main": "dist/ali-react-table.js",
+  "types": "dist/ali-react-table.d.ts",
   "license": "MIT",
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "start:website": "yarn workspace website start",
-    "start:demo": "yarn workspace demo start",
-    "deploy:website": "GIT_USER=shinima yarn workspace website deploy"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alibaba/ali-react-table.git"
   },
   "homepage": "https://github.com/alibaba/ali-react-table",
   "author": {
-    "name": "Shi Feichao",
-    "email": "feichao.sfc@alibaba-inc.com"
+    "name": "yuheng"
   },
-  "prettier": {
-    "printWidth": 120,
-    "singleQuote": true,
-    "semi": false,
-    "trailingComma": "all"
+  "scripts": {
+    "watch": "rollup --config rollup.config.js --watch",
+    "build": "rimraf dist/ && rollup --config rollup.config.js",
+    "preversion": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "pivot",
+    "bundle.css"
+  ],
+  "dependencies": {
+    "@popperjs/core": "^2.9.1",
+    "@types/classnames": "^2.2.9",
+    "classnames": "^2.2.6",
+    "postcss": "^8.4.49",
+    "resize-observer-polyfill": "^1.5.1",
+    "rollup-plugin-import-css": "^3.5.7",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-scss": "3",
+    "rxjs": "^6.5.4",
+    "sass": "^1.81.0",
+    "tslib": "^2.6.3"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
   },
   "devDependencies": {
-    "copyfiles": "^2.4.0",
-    "prettier": "^2.1.2",
-    "typescript": "~4.2"
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^20.14.12",
+    "@types/react": "^18.3.3",
+    "jest": "^26.6.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-is": "^16.13.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.3.1",
+    "rollup-plugin-typescript2": "^0.31.0",
+    "typescript": "~4.2",
+    "xlsx": "^0.16.0"
   }
 }
