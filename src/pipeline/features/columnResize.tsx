@@ -124,11 +124,11 @@ export function columnResize(opts: ColumnResizeFeatureOptions = {}) {
             <>
               {prevTitle}
               <span
-                className="resize-handle-pipline"
-                style={{
-                  "--handleBackground": opts.handleBackground,
-                  "--handleHoverBackground": opts.handleHoverBackground,
-                }}
+                className="resize-handle-span"
+                // style={{
+                //   "--handleBackground": opts.handleBackground,
+                //   "--handleHoverBackground": opts.handleHoverBackground,
+                // }}
                 onMouseDown={(e: React.MouseEvent<HTMLSpanElement>) =>
                   startResize(startIndex, endIndex, e)
                 }

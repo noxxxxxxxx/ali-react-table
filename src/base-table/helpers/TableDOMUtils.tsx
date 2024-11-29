@@ -52,13 +52,13 @@ export class TableDOMHelper {
     this.artTableWrapper = artTableWrapper
     this.artTable = artTableWrapper.querySelector<HTMLDivElement>(`.${Classes.artTable}`)
     this.tableHeader = this.artTable.querySelector(
-      `.art-table-wrapper .${Classes.tableHeader}`
+      `.${Classes.tableHeader}`
     );
     this.tableBody = this.artTable.querySelector(
-      `.art-table-wrapper .${Classes.tableBody}`
+      `.${Classes.tableBody}`
     );
     this.tableFooter = this.artTable.querySelector(
-      `.art-table-wrapper .${Classes.tableFooter}`
+      `.${Classes.tableFooter}`
     );
 
     const stickyScrollSelector = `.${Classes.artTable} + .${Classes.stickyScroll}`
@@ -73,7 +73,7 @@ export class TableDOMHelper {
   getTableRows(): NodeListOf<HTMLTableRowElement> {
     const htmlTable = this.getTableBodyHtmlTable()
     return htmlTable.querySelectorAll<HTMLTableRowElement>(
-      `.art-table-wrapper tbody .${Classes.tableRow}`
+      `tbody .${Classes.tableRow}`
     );
   }
 

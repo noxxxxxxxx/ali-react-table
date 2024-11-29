@@ -186,9 +186,7 @@ export default function TableHeader({ info }: { info: RenderInfo }) {
 
         const headerCellProps = col.headerCellProps ?? {}
 
-        const positionStyle: any = {
-          position: 'static',
-        }
+        const positionStyle: Record<string, any> = {}
         if (colIndex < leftFlatCount) {
           positionStyle.position = 'sticky'
           positionStyle.left = stickyLeftMap.get(colIndex)

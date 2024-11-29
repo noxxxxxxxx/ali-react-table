@@ -1,5 +1,5 @@
 :root {
-  --lock-shadow-padding: 20;
+  --lock-shadow-padding: 20px;
   // --row-height: 48px;
   // --color: #333;
   // --bgcolor: white;
@@ -42,6 +42,8 @@
   --header-bgcolor: var(--neutral-100);
   --header-hover-bgcolor: #f5f5f5;
   --header-highlight-bgcolor: #f5f5f5;
+  // --handle-background: (--neutral-400); //拖拽颜色
+  --handle-hover-background: var(--brand-400); // 拖拽 hover 颜色
 }
 
 /* BaseTable 表格组件的外层包裹 div */
@@ -373,16 +375,16 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    right: -5px;
-    width: 10px;
+    right: -3px;
+    width: 5px;
     cursor: col-resize;
     z-index: 1;
     transition: background-color 200ms;
 
-    background: var(--handleBackground);
+    background: var(--handle-background);
 
     &:hover {
-      background: var(--handleHoverBackground);
+      background: var(--handle-hover-background);
     }
   }
 
