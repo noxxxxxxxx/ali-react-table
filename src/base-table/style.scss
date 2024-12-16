@@ -380,8 +380,7 @@
     cursor: col-resize;
     z-index: 1;
     transition: background-color 200ms;
-
-    background: var(--handle-background);
+    background: transparent;
 
     &:hover {
       background: var(--handle-hover-background);
